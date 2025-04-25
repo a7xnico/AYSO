@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1745592181 source:d:\ayso tp4 threads\main.c
+	<stdlib.h>
+	<pthread.h>
+	<windows.h>
+

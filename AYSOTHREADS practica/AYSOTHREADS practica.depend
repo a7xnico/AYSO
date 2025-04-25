@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1745591829 source:d:\aysothreads practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+
