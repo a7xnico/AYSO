@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1748473849 source:c:\users\pablo\onedrive\escritorio\programacion facultad\ayso\tp5 threadslab5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+
