@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1748554282 source:c:\users\pablo\onedrive\escritorio\programacion facultad\ayso\tp5 semaforos7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<pthread.h>
+	<semaphore.h>
+

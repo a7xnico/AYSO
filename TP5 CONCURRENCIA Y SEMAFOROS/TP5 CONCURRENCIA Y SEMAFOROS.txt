@@ -1,0 +1,47 @@
+1-
+Deadlock
+es el error que ocurre cuando 2 procesos separados se quedan en el mismo estado esperando a que el otro cambie para poder realizar su siguiente instrucción, debido a que los dos actúan de esta manera nunca llegara a que puedan avanzar. Este error es el causante de errores en el S.O como la blue screen
+Livelock 
+error en el que dos procesos van cambiando su estado en respuesta a el otro estado, pero como los 2 lo están haciendo es un circulo vicioso en donde nunca llegaran a la condición deseada
+
+Ejemplo Deadlock
+dos personas están de frente en el marco de una puerta, esta solo tiene el espacio para que pase de a 1 persona a la vez, ambas están esperando a que la otra persona se haga a un lado para poder pasar por la puerta pero ninguna de las dos lo hace primero generando un estado de deadlock en donde nunca podrán pasar.
+
+Ejemplo Livelock
+Dos personas tratando de llamar por telefono a la otra al mismo tiempo, tras ver que da ocupado ambas personas esperan y vuelven a llamar a la vez, al querer hacerlo ambos nunca llegaran a poder coincidir en que 1 persona espere a la otra generando un estado de livelock
+
+2-
+Puede haber deadlock debido a que si los 3 procesos están realizándose y 2 quieren cambiar ninguno de los 2 podrá moverse por el hecho de que esten ocupados todos los recursos
+En el caso de si R1 puede contener 3 procesos no habría problema ya que si quieren cambiar el que esta en R2 puede ir a R1 primero y luego el de R1 que quiera cambiar tiene libre R2 con anterioridad.
+
+3-
+El sistema se encuentra sin ningún estado de bloqueo debido a que hay el suficiente espacio para que los 3 procesos puedan utilizar los recursos debido a el sobrante de espacio en los recursos.
+
+4-
+Se puede producir DEADLOCK en caso de que tras el primer proceso de P1 y P2 quieran el intercambiar lugares teniendo en cuenta que sea el orden de P1 R1-R2-R3 y el orden de P2 R2-R1
+P3 Es irrelevante en este caso de deadlock debido a que solo utiliza R3
+En caso de que P2 espere no habría ningún problema en cuanto a deadlock ya que puede estar el P1 y P3 a la vez y cuando termine P1 haga P2 todos los que necesite
+
+5-
+A- P1 x--1 P2 x--2 P1 x++3 P1 if(x!=10)4 P1 printf() 5
+B P1 x--1 P2 x--2 P1 x++3 P1 if(x!=10)4 P2 x++5 P1 printf()6
+
+6-
+Puede ocurrir un error a partir de la segunda vuelta, en la primera se crea un fichero y se agrega a imprimir a la cola, pero en la segunda puede estar el error de sobreescribirse el valor de las peticiones causando problemas 
+P1 if()1, P2 insertarFicheroCola()2, P2 R2 = peticiones3, P2 R2 = R2 + 1 4, P2 peticiones = R2 5
+el problema iniciaria aca que peticiones = 1
+P1  extraerColasPeticion()6, P2 InsertarFicheroCola()7, P1 R1 = peticiones(1)8, P2 R2 = peticiones(1)9, P1 R1 = R1 - 1 10, P2 R2 = R2 + 1 11, P1 peticiones = R2(0)12, P2 peticiones = R2(2)13,
+al tener este orden hay un error a la hora de cuantos ficheros hay en la cola, en lugar de que sea 1 solo se puede llegar a ver  como que hay 2 debido a que las peticiones se actualizaron en el orden equivocado
+
+8-
+Tiene un problema y es en los sem_wait que se invierten, causando un deadlock donde los dos esperan al otro.
+
+9- Solamente cambiar el valor del semáforo que primero quieras que se muestre por la pantalla.
+
+10- Inicializar los espacios libres que haya y el semáforo de manipulacionBuffer, hay un error y el consumidor primero debería hacer sem_wait a elementoDisponible porque si no estaria agarrando el espacio de buffer y quedaria en deadlock el programa.
+
+
+
+
+
+
